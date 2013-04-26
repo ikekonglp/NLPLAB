@@ -146,17 +146,28 @@ Other phenomena also do appear in German, like Suppletion, Ablaut, Chipping and 
 \section{Initial Design}
 
 \subsection{Empirical Word Cluster}
-
+Rather than focusing on the morphological rules and way too many exceptions in German, our approach, like the in \cite{sch04} 
 \subsection{Suffix Phenomena Solution}
 
 \subsection{Deletion Phenomena Solution}
 For the deletion problem, unlike in English (e-deletion), we do not have a clear rule to do the deletion and the characters deleted are different from each other and often more than one character. Therefore, we use the different deletion rules to solve the problem, for example, if we want to delete the \textit{a} in the end of the word, we implement an ``Adel'' (A-Deletion rule) to deal with that. Basically, if we first add a ``-a'' string before the morphological boundary (in the lexicon file), and then we use the rule to delete all the ``a-a'' before the morphological boundary (in the rule file).
+\begin{verbatim}
+define Delus {us} -> 0 || ?* _ "-us" "+um"* "^" ?* ;
+\end{verbatim}
 
 \subsection{Prefix Phenomena Solution}
+The prefix phenomena is solved using a trick FOMA regular expression which stands for a insertion before the longest possible match.
+\begin{verbatim}
+define Addpref   .?* "^" "+ge" ?*. @-> {ge} ...;
+\end{verbatim}
 
 \subsection{Umlaut Phenomena Solution}
 
-
+\begin{verbatim}
+define Plusum1 a -> "+uma" || C* _ RC*  RuleSymbolPM* "+um" "^" ?* ;
+\end{verbatim}
+First map the character into intermediate symbols like the ``+uma'', and then map it into the umlaut characters at last like ``"a''. By performing the trick, we avoiding the errors which happens if there are two different vowels in the same word.\\
+Also, an open question is that, when there are two vowels in the same word, it is not clear for which one we should do the umlaut thing (It is neither always the first vowel nor the last vowel). Since we found that the vowel u seems to be more preferable in umlaut, we insert a tricky rule which replace the u first than a or o.
 
 
 \section{System Analysis on Corpus A}

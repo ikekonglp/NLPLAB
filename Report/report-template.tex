@@ -1,0 +1,223 @@
+\documentclass[11pt,letterpaper]{article}
+
+
+\usepackage[german]{babel}
+\usepackage{fullpage}
+
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts,eucal,amsbsy,amsopn,amsmath}
+\usepackage{url}
+\usepackage[sort&compress]{natbib}
+\usepackage{natbibspacing}
+\usepackage{latexsym}
+
+\usepackage{wasysym} 
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\usepackage{sectsty}
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{multicol}
+\definecolor{orange}{rgb}{1,0.5,0}
+\usepackage{multirow}
+\usepackage{sidecap}
+\usepackage{caption}
+\renewcommand{\captionfont}{\small}
+\setlength{\oddsidemargin}{-0.04cm}
+\setlength{\textwidth}{16.59cm}
+\setlength{\topmargin}{-0.04cm}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{22.94cm}
+\allsectionsfont{\normalsize}
+\newcommand{\ignore}[1]{}
+\newenvironment{enumeratesquish}{\begin{list}{\addtocounter{enumi}{1}\arabic{enumi}.}{\setlength{\itemsep}{-0.25em}\setlength{\leftmargin}{1em}\addtolength{\leftmargin}{\labelsep}}}{\end{list}}
+\newenvironment{itemizesquish}{\begin{list}{\setcounter{enumi}{0}\labelitemi}{\setlength{\itemsep}{-0.25em}\setlength{\labelwidth}{0.5em}\setlength{\leftmargin}{\labelwidth}\addtolength{\leftmargin}{\labelsep}}}{\end{list}}
+
+\bibpunct{(}{)}{;}{a}{,}{,}
+\newcommand{\nascomment}[1]{\textcolor{blue}{\textbf{[#1 --NAS]}}}
+
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage~of \pageref{lastpage}}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\title{11-712:  NLP Lab Report}
+\author{Lingpeng Kong}
+\date{April 26, 2013}
+
+\begin{document}
+\maketitle
+\renewcommand{\abstractname}{Abstract}
+
+\begin{abstract}
+This is an incomplete draft of the development report for YAGMA (Yet Another German Morphological Analyser). The main content of this report includes basic information about German, past work on morphology of German, a survey of German morphology, design plans and experiment results for YAGMA.
+\end{abstract}
+
+\nascomment{brief introduction}
+
+\section{Basic Information about German}
+German (Deutsch) is spoken as a first language by approximately 100 million people in the Federal Republic of Germany, the German Democratic Republic, Austria, Switzerland, and elsewhere, and as a second language by many others in Central and Eastern Europe. \citep{fox}\\\\
+Most German vocabulary is derived from the Germanic branch of the Indo-European language family \citep{ec}. A number of words are derived from Latin and Greek, and fewer from French and English. German is written using the Latin alphabet. In addition to the 26 standard letters, German has three vowels with umlauts ("A/"a, "O/"o, and "U/"u) and the letter "s.\\\\
+In terms of morphological system, German has a particularly complex word structure, rather more complex than some other languages, including English. \citep{fox} It has a relatively speaking complex case and gender system, and very complicated rules in conjugation, declension and word formation.
+\section{Past Work on the Morphology of German}
+A lot of work has been done in the study of German morphology. Traditional linguistics provides a descriptive summary of the morphological phenomena in German \citep{glli} \citep{fox}, which gives us insights of what is morphology in German, and how methods like ``Umlaut'' been used in word formation.\\\\
+In the computational linguistics side, a handful of papers have been published \citep{lez96} \citep{lez98} \citep{lez00} \citep{sch04}. These efforts fall into mainly different categories. The first one is to use a traditional stemming-then-generation approach, the basic idea of which is to cut all the possible affix and umlaut variations, then use the possible generation method to recover all the possible forms of the stem, if one (or more) of them match(es) the word given, we know its morphological components. The second approach is based on Finite State Transducer (FST), like much of the modern morphological analysers. These tools differs from each other mainly due to their coverage of the morphological phenomena (some only consider inflections while others only consider derivations). SMOR \citep{sch04} is a very comprehensive morphological analyser which consider both inflections and derivations. It also make rules to deal with simple compounding phenomena in German and achieve a good result. \\\\
+Despite the difficulties in German, it seems that it can still be solved in FST framework. Not much work (if any) tries to use upgrade to the context free grammar. 
+
+
+\section{Available Resources}
+There are many available resources that can contribute to German morphological analysis tasks. 
+\begin{itemize}
+\item Negra\footnote{http://www.coli.uni-saarland.de/projects/sfb378/negra-corpus/negra-corpus.html} and TIGER\footnote{http://www.ims.uni-stuttgart.de/projekte/TIGER/TIGERCorpus/} are most widely used two Treebank for German. TIGER has morphological labels for the words since version 2.1.  
+\item The CoNLL-2003 shared task data files\footnote{http://www.cnts.ua.ac.be/conll2003/ner/} contain some labelled German text, where it give the words, lemma and its POS tags.
+\item Morphisto\footnote{http://code.google.com/p/morphisto/} is a morphological analyzer and generator for German wordforms. The basis of Morphisto is the open-source SMOR morphology for the German language developed by the University of Stuttgart (GPL v2) for which a free lexicon is provided under the Creative Commons 3.0 BY-SA Non-Commercial license.
+\item Vollformenlexikon\footnote{http://www.danielnaber.de/morphologie/index\_en.html} provides a German full form dictionary with about 90,000 base forms and 431,000 full forms (inflected forms). Each full form comes with full morphological information. The data is originally extract from Morphy \citep{lez96}.
+\item LDC also provides several useful German corpus. (LDC95T11\footnote{http://www.ldc.upenn.edu/Catalog/catalogEntry.jsp?catalogId=LDC95T11} is used for test for \cite{sch04})
+\item SFST - Stuttgart Finite State Transducer Tools \footnote{http://www.ims.uni-stuttgart.de/projekte/gramotron/SOFTWARE/SFST.html}
+\end{itemize}
+In terms of the choice of our corpus A, B, C, we decided to use the TIGER Corpus since its labels are relatively high quality. We may also consider to mix some of the full forms in Vollformenlexikon because the TIGER labels are unique (words' morphological roles in a sentence are unique but only given full forms, we should have multiple possibilities for each word) while Vollformenlexikon labels all the possible morphological analysis of single full form word.
+
+\section{Survey of Phenomena in German}
+To make life easier, instead of talking countless exceptions and irregular rules, we will first introduce the most productive rules in German. Of course, this set of rules fall into the inflection category. These rules is the mainly focus of our work. After that, we will briefly discuss other morphological phenomena in German.
+
+\subsection{Case and Gender}
+German has a relatively complex case and gender system. It has four cases, the NOMINATIVE, ACCUSATIVE, GENITIVE, and DATIVE. It has three genders: MASCULINE, FEMININE, and NEUTER (in the plural, no distinction of gender is made).
+
+\subsection{Productive Morphological Phenomena (Inflection)}
+
+\subsubsection{Nouns}
+Nouns can add some affix to generate their plural forms\footnote{A full discuss of these rules, like the choice of the rule based on different conditions will not be listed here to save space. Do note these rules exist, for example, when the noun ending with el, we should use the first rule rather than the second and third}.\\
+N [+SUFFIX (e)n, nen] $\rightarrow$ Plural\\
+N [+SUFFIX s]  $\rightarrow$ Plural\\
+N [+SUFFIX e] ([+UMLAUT]) $\rightarrow$ Plural\\\\
+Nouns can also have variations in cases.\\
+Strong:\\
+SIN-N [+SUFFIX (e)s] $\rightarrow$ Genitive\\
+PLU-N [+SUFFIX (e)n] $\rightarrow$ Dative\\
+Others remain unchanged.\\
+Weak:\\
+N [+SUFFIX (e)n] $\rightarrow$ All cases except Nominative\\
+\subsubsection{Verbs}
+Verb stems can add tense affix to generate infinite, past, past participle form.\\
+Weak (Main Part of the German):\\
+$[stem]_v$ + [+SUFFIX (e)te] $\rightarrow$ Past\\
+$ $ [+PREFIX ge] + $[stem]_v$ + [+SUFFIX (e)t] $\rightarrow$ Past Participle
+\subsubsection{Adjectives}
+Adjectives can be various in cases, genders, and numbers\footnote{More precisely, when used with nouns in different cases, genders, and numbers, the adjectives have different forms.}.\\
+Weak:\\
+$[stem]_{adj}$ + [+SUFFIX e] $\rightarrow$ SIN MAS/NEU/FEM NOMINATIVE\\
+$[stem]_{adj}$ + [+SUFFIX e] $\rightarrow$ SIN NEU ACCUSATIVE\\
+$[stem]_{adj}$ + [+SUFFIX en] $\rightarrow$ Others\\\\
+In German, adjectives also have their comparative and superlative forms. This is quite like in English.\\
+$[stem]_{adj}$ + [+SUFFIX er] $\rightarrow$ Comparative\\
+$[stem]_{adj}$ + [+SUFFIX (e)st] $\rightarrow$ Superlative\\
+
+\subsection{Less Productive Morphological Phenomena}
+German has many exceptional and complicated rules (otherwise it will not considered to be thus difficult), but we won't worry too much about the irregular morphological changes, after all, they are finite, which means in worst cases, we can deal them with a table list all of them.
+
+
+\subsubsection{Derivations}
+Derivational, or lexical, morphology differs from inflectional morphology in being concerned with the formation of different lexemes from the same root, rather than with different grammatical forms of the same lexeme. Derivation is also very important in German, but they are less productive. Same thing happens in English. Some main phenomena related to derivation is summarized here\footnote{Again, we do not tend to list all. We want to provide a general intuition about what happens in German.}.\\
+$ $ [PREFIX ent/er/...] + $[stem]_v$ $\rightarrow$ Verb\\
+$[stem]_v$ + [SUFFIX eln/ern/...] $\rightarrow$ Verb\\
+$[stem]_v$ + [SUFFIX er/...] $\rightarrow$ Noun\\
+$[stem]_v$ + [SUFFIX bar] $\rightarrow$ Adjective\\
+$[stem]_n$ + [SUFFIX ig] $\rightarrow$ Adjective\\
+$[stem]_n$ + [SUFFIX isch] $\rightarrow$ Adverb\\\\
+{\bf Conversion} (Zero-derivation) also happens a lot in German, which always forms a word of a different category from the base word. But it is not really productive \citep{glli}. Therefore, it seems that remember all of them in the finite state transducer is a reasonable solution for this.
+\subsubsection{Compounding}
+Compounding is one of the main difference between German and English. In German, compounding is every where. VV structure is quite rare, but we can still see many forms like NN NA AA AN and PN. This compounding may not only have the direct concatenate of two words, something may also be added in this process, like the following example:\\
+$[stem]_n$ + s + $[stem]_n$ $\rightarrow$ Noun\\
+Fortunately, the good thing here, is that, after compounding, same rule set can be applied to it, the compounding noun has no particular features, it just performs as a common noun. Cases are also true for verbs and others.
+
+\subsection{Discussions and Notes}
+Despite the common affix things, German has some phenomena which worth more attentions. First is that, some morphemes are discontinuous, like the ge - en and ge - t. Second it that, a morpheme can be realized by suffix and umlaut together. These facts contribute to the complexity of the finite state transducer for German morphology analysis.\\\\
+Other phenomena also do appear in German, like Suppletion, Ablaut, Chipping and Reduplication. We will not go through each of them here.
+
+\section{Initial Design}
+
+\subsection{Empirical Word Cluster}
+
+\subsection{Suffix Phenomena Solution}
+
+\subsection{Deletion Phenomena Solution}
+For the deletion problem, unlike in English (e-deletion), we do not have a clear rule to do the deletion and the characters deleted are different from each other and often more than one character. Therefore, we use the different deletion rules to solve the problem, for example, if we want to delete the \textit{a} in the end of the word, we implement an ``Adel'' (A-Deletion rule) to deal with that. Basically, if we first add a ``-a'' string before the morphological boundary (in the lexicon file), and then we use the rule to delete all the ``a-a'' before the morphological boundary (in the rule file).
+
+\subsection{Prefix Phenomena Solution}
+
+\subsection{Umlaut Phenomena Solution}
+
+
+
+
+\section{System Analysis on Corpus A}
+
+\begin{tabular}{|c|ccc|}
+\hline 
+ & Predicted & Corrected & Accuracy \\ 
+\hline 
+Corpus A & 573 & 560 & 0.978 \\ 
+\hline 
+\end{tabular} 
+\\
+\begin{tabular}{|c|ccc|}
+\hline 
+ & Predicted & Corrected & Accuracy \\ 
+\hline 
+Corpus A & 195 & 195 & 1.00 \\ 
+\hline 
+\end{tabular} 
+
+\section{Lessons Learned and Revised Design}
+
+\section{System Analysis on Corpus B}
+\begin{tabular}{|c|ccc|}
+\hline 
+ & Predicted & Corrected & Accuracy \\ 
+\hline 
+Corpus B & 650 & 615 & 0.946 \\ 
+\hline 
+\end{tabular} 
+\\
+\begin{tabular}{|c|ccc|}
+\hline 
+ & Predicted & Corrected & Accuracy \\ 
+\hline 
+Corpus B & 142 & 142 & 1.00 \\ 
+\hline 
+\end{tabular} 
+\\
+\begin{tabular}{|c|ccc|}
+\hline 
+ & Predicted & Corrected & Accuracy \\ 
+\hline 
+Corpus A & 657 & 631 & 0.960 \\ 
+\hline 
+\end{tabular} 
+\\
+
+
+
+\section{Final Revisions}
+
+\section{Future Work}
+
+
+
+
+\renewcommand\refname{References}
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+
+\label{lastpage}
+\end{document}

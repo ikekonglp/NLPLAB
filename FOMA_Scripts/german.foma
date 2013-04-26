@@ -1,0 +1,72 @@
+read lexc german.lexc
+define Lexicon;
+
+define UPCase [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Ä|Ö|Ü] ;
+define LOWCase [a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|ä|ü|ö|β] ;
+define C [b|c|d|e|f|g|h|i|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z|B|C|D|E|F|G|H|I|J|K|L|M|N|P|Q|R|S|T|V|W|X|Y|Z|β|ä|ö|ü|Ä|Ö|Ü] ;
+define NOU [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|v|w|x|y|z|ä|ü|ö|Ä|Ö|Ü|β];
+define RC [A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|Ä|Ö|Ü|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|ä|ü|ö|β];
+
+define RuleSymbolPM ["-a"|"-is"|"-us"|"-on"|"-s"|"-um"];
+
+define Dela a -> 0 || ?* _ "-a" "+um"* "^" ?* ;
+define Delis {is} -> 0 || ?* _ "-is" "+um"* "^" ?* ;
+define Delus {us} -> 0 || ?* _ "-us" "+um"* "^" ?* ;
+define Delon {on} -> 0 || ?* _ "-on" "+um"* "^" ?* ;
+define Dels s -> 0 || ?* _ "-s" "+um"* "^" ?* ;
+define Delum {um} -> 0 || ?* _ "-um" "+um"* "^" ?* ;
+define Addpref   .?* "^" "+ge" ?*. @-> {ge} ...;
+
+define DelAdd Dela  .o.
+              Delis  .o.
+              Delus  .o.
+              Dels   .o.
+              Delum   .o.
+              Addpref  ;
+
+
+define Plusum3 u -> "+umu" || NOU* _ RC*  RuleSymbolPM* "+um" "^" ?* ;
+define Plusum1 a -> "+uma" || C* _ RC*  RuleSymbolPM* "+um" "^" ?* ;
+define Plusum2 o -> "+umo" || C* _ RC*  RuleSymbolPM* "+um" "^" ?* ;
+
+define Plusumfr "+umu" -> ü, "+uma" -> ä, "+umo" -> ö;
+
+define Plusumx Plusum3  .o.
+              Plusum1  .o.      
+              Plusum2;
+
+define Plusum Plusumx .o.
+              Plusumfr;
+
+define Cleanup1 "^" -> 0;
+define Cleanup2 ["+um"|"-a"|"-is"|"-us"|"-on"|"-s"|"-um"|"+ge"|"+prefix"]* -> 0;
+
+define Cleanup Cleanup1 .o.
+               Cleanup2;
+
+
+
+define Grammar Lexicon           .o. 
+               DelAdd            .o.
+               Plusum            .o.
+               Cleanup;
+
+ define Unknown [UPCase LOWCase* [
+                            ["+NN" "+Sg"]:["^" 0]|
+                            ["+NN" "+Plural"]:["^" e n]|
+                            ["+NN" "+Sg" "+Gen"]:["^" e n]
+                                ]|
+                             [0:[g e "^"] LOWCase* "+V" "+PastP"]:["^" t]|
+                             [LOWCase* "+V" "+Infinit"]:["^" e n]] ;
+
+define BRule {ss} -> ß ;
+
+define BGrammar Grammar .o.
+                BRule;
+
+define Guesser Unknown   .o.
+               Cleanup;
+
+#regex Grammar .p. Guesser;
+#regex Grammar .p. BGrammar;
+regex RC+ "-" Grammar .p. BGrammar;

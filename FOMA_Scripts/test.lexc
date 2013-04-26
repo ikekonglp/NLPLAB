@@ -1,0 +1,96 @@
+Multichar_Symbols +NN +Masc +Fem +Neut +Sg +Plural +Nom +Acc +Dat +Gen +Umlaut +V +Infinit +PastP +Present +um -a -is -us +umu +uma +umo -on -s -um +prefix +ge
+
+LEXICON Root
+NNOUN;
+VVerb;
+COMP;
+
+LEXICON VVerb
+VVReg;
+
+LEXICON NNOUN
+NFem_0_n ;
+NMasc_en_en ;
+NMasc_s_$;
+NFem-a/en ;
+NFem-in;
+NFem-is/en;
+NFem-is/iden;
+NFem-s/$sse;
+NFem-s/sse;
+NFem-s/ssen;
+NFem/Sg;
+NFem_0_$;
+NFem_0_e;
+NFem_0_$e;
+NFem_0_en;
+Nq/Pl_x;
+NFem_0_s;
+NFem_0_n;
+NMasc-s/Sg;
+NMasc-ns;
+NMasc-s/$sse;
+NMasc-us/en;
+NMasc/Sg_es;
+NMasc_en_en;
+NMasc/Sg_s;
+NMasc_0_x;
+NMasc-s/sse;
+NMasc-us/i;
+NMasc/Sg_0;
+NMasc_es_$e;
+NMasc_es_$er;
+NMasc_es_e;
+NMasc_es_en;
+NMasc_n_n;
+NMasc_s_$x;
+NMasc_s_0;
+NMasc_s_e;
+NMasc_s_en;
+NMasc_s_n;
+NMasc_s_s;
+NMasc_s_x;
+NNeut-0/ien;
+NNeut-Herz;
+NNeut-a/en;
+NNeut-on/a;
+NNeut-s/$sser;
+NNeut-um/a;
+NNeut-a/ata;
+NMasc_s_$x;
+NNeut-um/en;
+NNeut/Pl;
+NNeut/Sg_s;
+NNeut/Sg_es;
+NNeut_0_x;
+NNeut_es_$e;
+NNeut_es_e;
+NNeut_es_en;
+NNeut_es_er;
+NNeut_s_$;
+NNeut_s_0;
+NNeut_s_e;
+NNeut_s_en;
+NNeut_s_n;
+NNeut_s_s;
+NNeut_es_$er;
+NNeut_s_x;
+
+LEXICON COMP
+    NOUN;
+
+
+
+LEXICON Nq/Pl_x
+Peanuts    Nq/Pl_xSPinf;
+Ferien     Nq/Pl_xSPinf;
+Eltern     Nq/Pl_xSPinf;
+
+
+
+
+LEXICON Nq/Pl_xSPinf
++NN+Nom+Plural:0 #;
++NN+Acc+Plural:0 #;
++NN+Dat+Plural:0 #;
++NN+Gen+Plural:0 #;

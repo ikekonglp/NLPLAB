@@ -1,0 +1,939 @@
+Multichar_Symbols +NN +Masc +Fem +Neut +Sg +Plural +Nom +Acc +Dat +Gen +Umlaut +V +Infinit +PastP +Present +um -a -is -us +umu +uma +umo -on -s -um +prefix +ge
+
+LEXICON Root
+NFem_0_n ;
+NMasc_en_en ;
+NMasc_s_$;
+VVReg;
+NFem-a/en ;
+NFem-in;
+NFem-is/en;
+NFem-is/iden;
+NFem-s/$sse;
+NFem-s/sse;
+NFem-s/ssen;
+NFem/Sg;
+NFem_0_$;
+NFem_0_e;
+NFem_0_$e;
+NFem_0_en;
+Nq/Pl_x;
+NFem_0_s;
+NFem_0_n;
+NMasc-s/Sg;
+NMasc-ns;
+NMasc-s/$sse;
+NMasc-us/en;
+NMasc/Sg_es;
+NMasc_en_en;
+NMasc/Sg_s;
+NMasc_0_x;
+NMasc-s/sse;
+NMasc-us/i;
+NMasc/Sg_0;
+NMasc_es_$e;
+NMasc_es_$er;
+NMasc_es_e;
+NMasc_es_en;
+NMasc_n_n;
+NMasc_s_$x;
+NMasc_s_0;
+NMasc_s_e;
+NMasc_s_en;
+NMasc_s_n;
+NMasc_s_s;
+NMasc_s_x;
+NNeut-0/ien;
+NNeut-Herz;
+NNeut-a/en;
+NNeut-on/a;
+NNeut-s/$sser;
+NNeut-um/a;
+NNeut-a/ata;
+NMasc_s_$x;
+NNeut-um/en;
+NNeut/Pl;
+NNeut/Sg_s;
+NNeut/Sg_es;
+NNeut_0_x;
+NNeut_es_$e;
+NNeut_es_e;
+NNeut_es_en;
+NNeut_es_er;
+NNeut_s_$;
+NNeut_s_0;
+NNeut_s_e;
+NNeut_s_en;
+NNeut_s_n;
+NNeut_s_s;
+NNeut_es_$er;
+NNeut_s_x;
+
+
+LEXICON Nq/Pl_x
+Peanuts    Nq/Pl_xSPinf;
+Ferien     Nq/Pl_xSPinf;
+Eltern     Nq/Pl_xSPinf;
+
+
+
+
+LEXICON Nq/Pl_xSPinf
++NN+Nom+Plural:0 #;
++NN+Acc+Plural:0 #;
++NN+Dat+Plural:0 #;
++NN+Gen+Plural:0 #;
+
+
+LEXICON NMasc-s/Sg
+Hass+NN+Nom+Sg:Hass #;
+Hass+NN+Acc+Sg:Hass #;
+Hass+NN+Dat+Sg:Hase #;
+Hass+NN+Dat+Sg:Hases #;
+Hass+NN+Gen+Sg:Hasses #;
+
+
+
+LEXICON NFem-s/$sse
+Nuss+Fem+NN+Nom+Sg:Nuss #;
+Nuss+Fem+NN+Acc+Sg:Nuss #;
+Nuss+Fem+NN+Dat+Sg:Nuss #;
+Nuss+Fem+NN+Gen+Sg:Nuss #;
+
+Nuss+Fem+NN+Nom+Plural+Umlaut:Nüsse #;
+Nuss+Fem+NN+Acc+Plural+Umlaut:Nüsse #;
+Nuss+Fem+NN+Dat+Plural+Umlaut:Nüssen #;
+Nuss+Fem+NN+Gen+Plural+Umlaut:Nüsse #;
+
+LEXICON NFem-s/ssen
+Stewardess+Fem+NN+Nom+Sg:Stewardess #;
+Stewardess+Fem+NN+Acc+Sg:Stewardess #;
+Stewardess+Fem+NN+Dat+Sg:Stewardess #;
+Stewardess+Fem+NN+Gen+Sg:Stewardess #;
+
+Stewardess+Fem+NN+Nom+Plural:Stewardessen #;
+Stewardess+Fem+NN+Acc+Plural:Stewardessen #;
+Stewardess+Fem+NN+Dat+Plural:Stewardessen #;
+Stewardess+Fem+NN+Gen+Plural:Stewardessen #;
+
+LEXICON NNeut-Herz
+Herz+Neut+NN+Nom+Sg:Herz #;
+Herz+Neut+NN+Acc+Sg:Herz #;
+Herz+Neut+NN+Dat+Sg:Herz #;
+Herz+Neut+NN+Dat+Sg:Herzen #;
+Herz+Neut+NN+Gen+Sg:Herzs #;
+Herz+Neut+NN+Nom+Plural:Herzen #;
+Herz+Neut+NN+Acc+Plural:Herzen #;
+Herz+Neut+NN+Dat+Plural:Herzen #;
+Herz+Neut+NN+Gen+Plural:Herzen #;
+
+
+
+
+LEXICON NFem_0_n
+Rose	NFem_0_nSPinf;
+
+LEXICON NMasc_en_en
+Satellit NMasc_en_enSPinf;
+
+
+LEXICON NMasc_en_enSPinf
++Masc+NN+Gen+Sg:^en  #;
++Masc+NN+Sg:0   #;
++Masc+NN+Plural:^en  #;
+
+
+LEXICON NFem_0_nSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^n #;
++Fem+NN+Acc+Plural:^n #;
++Fem+NN+Dat+Plural:^n #;
++Fem+NN+Gen+Plural:^n #;
+
+LEXICON VVReg
+abonnier VVRegSPinf;
+
+LEXICON VVRegSPinf
++V+Infinit:^en #;
++V+PastP:^+get #;
+
+
+
+LEXICON NFem-a/en
+Agenda    NFem-a/enSPinf;
+
+LEXICON NFem-a/enSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:-a^en #;
++Fem+NN+Acc+Plural:-a^en #;
++Fem+NN+Dat+Plural:-a^en #;
++Fem+NN+Gen+Plural:-a^en #;
+
+LEXICON  NFem-in
+Forscherin    NFem-inSPinf;
+
+LEXICON NFem-inSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^nen #;
++Fem+NN+Acc+Plural:^nen #;
++Fem+NN+Dat+Plural:^nen #;
++Fem+NN+Gen+Plural:^nen #;
+
+LEXICON NFem-is/en
+Krisis    NFem-is/enSPinf;
+
+LEXICON NFem-is/enSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:-is^en #;
++Fem+NN+Acc+Plural:-is^en #;
++Fem+NN+Dat+Plural:-is^en #;
++Fem+NN+Gen+Plural:-is^en #;
+
+LEXICON NFem-is/iden
+Meningitis    NFem-is/idenSPinf;
+
+LEXICON NFem-is/idenSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:-is^iden #;
++Fem+NN+Acc+Plural:-is^iden #;
++Fem+NN+Dat+Plural:-is^iden #;
++Fem+NN+Gen+Plural:-is^iden #;
+
+LEXICON NFem-s/sse
+Wildnis    NFem-s/sseSPinf;
+
+LEXICON NFem-s/sseSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^se #;
++Fem+NN+Acc+Plural:^se #;
++Fem+NN+Dat+Plural:^sen #;
++Fem+NN+Gen+Plural:^se #;
+
+
+LEXICON NFem/Sg
+Staatsduma    NFem/SgSPinf;
+
+
+LEXICON  NFem/SgSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
+
+LEXICON NFem_0_$
+Tochter    NFem_0_$SPinf;
+
+LEXICON NFem_0_$SPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural+Umlaut:+um^ #;
++Fem+NN+Acc+Plural+Umlaut:+um^ #;
++Fem+NN+Dat+Plural+Umlaut:+um^n #;
++Fem+NN+Gen+Plural+Umlaut:+um^ #;
+
+LEXICON NFem_0_$e
+Unterkunft    NFem_0_$eSPinf;
+
+LEXICON NFem_0_$eSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural+Umlaut:+um^e #;
++Fem+NN+Acc+Plural+Umlaut:+um^e #;
++Fem+NN+Dat+Plural+Umlaut:+um^en #;
++Fem+NN+Gen+Plural+Umlaut:+um^e #;
+
+LEXICON NFem_0_e
+Causa    NFem_0_eSPinf;
+
+LEXICON NFem_0_eSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^e #;
++Fem+NN+Acc+Plural:^e #;
++Fem+NN+Dat+Plural:^e #;
++Fem+NN+Gen+Plural:^e #;
+
+LEXICON NFem_0_en
+Chronik    NFem_0_enSPinf;
+
+LEXICON NFem_0_enSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^en #;
++Fem+NN+Acc+Plural:^en #;
++Fem+NN+Dat+Plural:^en #;
++Fem+NN+Gen+Plural:^en #;
+
+LEXICON NFem_0_n
+Chronologie    NFem_0_nSPinf;
+
+LEXICON  NFem_0_nSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^n #;
++Fem+NN+Acc+Plural:^n #;
++Fem+NN+Dat+Plural:^n #;
++Fem+NN+Gen+Plural:^n #;
+
+LEXICON NFem_0_s
+City    NFem_0_sSPinf;
+
+LEXICON NFem_0_sSPinf
++Fem+NN+Nom+Sg:0  #;
++Fem+NN+Acc+Sg:0  #;
++Fem+NN+Dat+Sg:0  #;
++Fem+NN+Gen+Sg:0  #;
++Fem+NN+Nom+Plural:^s #;
++Fem+NN+Acc+Plural:^s #;
++Fem+NN+Dat+Plural:^s #;
++Fem+NN+Gen+Plural:^s #;
+
+
+LEXICON NMasc-ns
+Wille    NMasc-nsSPinf;
+
+LEXICON NMasc-nsSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Nom+Sg:^n #;
++Masc+NN+Acc+Sg:^n  #;
++Masc+NN+Dat+Sg:^n #;
++Masc+NN+Gen+Sg:^ns #;
++Masc+NN+Nom+Plural:^n #;
++Masc+NN+Acc+Plural:^n #;
++Masc+NN+Dat+Plural:^n #;
++Masc+NN+Gen+Plural:^n #;
+
+LEXICON NMasc-s/$sse
+Vorschuss     NMasc-s/$sseSPinf;
+
+LEXICON NMasc-s/$sseSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0  #;
++Masc+NN+Dat+Sg:^e #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^es #;
++Masc+NN+Nom+Plural:+um^e #;
++Masc+NN+Acc+Plural:+um^e #;
++Masc+NN+Dat+Plural:+um^en #;
++Masc+NN+Gen+Plural:+um^e #;
+
+LEXICON NMasc-s/sse
+Turnus    NMasc-s/sseSPinf;
+
+LEXICON NMasc-s/sseSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:0 #;
++Masc+NN+Nom+Plural:+um^se #;
++Masc+NN+Acc+Plural:+um^se #;
++Masc+NN+Dat+Plural:+um^sen #;
++Masc+NN+Gen+Plural:+um^se #;
+
+LEXICON NMasc-us/en
+Zyklus    NMasc-us/enSPinf;
+
+LEXICON NMasc-us/enSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:0 #;
++Masc+NN+Nom+Plural:-us^en #;
++Masc+NN+Acc+Plural:-us^en #;
++Masc+NN+Dat+Plural:-us^en #;
++Masc+NN+Gen+Plural:-us^en #;
+
+LEXICON NMasc-us/i
+Terminus    NMasc-us/iSPinf;
+
+LEXICON NMasc-us/iSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:0 #;
++Masc+NN+Nom+Plural:-us^i #;
++Masc+NN+Acc+Plural:-us^i #;
++Masc+NN+Dat+Plural:-us^i #;
++Masc+NN+Gen+Plural:-us^i #;
+
+LEXICON NMasc/Sg_0
+Yoga    NMasc/Sg_0SPinf;
+
+LEXICON NMasc/Sg_0SPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:0 #;
+
+LEXICON NMasc/Sg_es
+Wust    NMasc/Sg_esSPinf;
+
+LEXICON NMasc/Sg_esSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Dat+Sg:e #;
++Masc+NN+Gen+Sg:es #;
++Masc+NN+Gen+Sg:s #;
+
+LEXICON NMasc/Sg_s
+Weizen    NMasc/Sg_sSPinf;
+
+LEXICON NMasc/Sg_sSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:s #;
+
+LEXICON NMasc_0_x
+Prix    NMasc_0_xSPinf;
+
+LEXICON NMasc_0_xSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:0 #;
++Masc+NN+Nom+Plural:0 #;
++Masc+NN+Acc+Plural:0 #;
++Masc+NN+Dat+Plural:0 #;
++Masc+NN+Gen+Plural:0 #;
+
+LEXICON NMasc_en_en
+Propagandist    NMasc_en_enSPinf;
+
+LEXICON NMasc_en_enSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:^en #;
++Masc+NN+Dat+Sg:^en #;
++Masc+NN+Gen+Sg:^en #;
++Masc+NN+Nom+Plural:^en #;
++Masc+NN+Acc+Plural:^en #;
++Masc+NN+Dat+Plural:^en #;
++Masc+NN+Gen+Plural:^en #;
+
+LEXICON NMasc_es_$e
+Präzedenzfall    NMasc_es_$eSPinf;
+
+LEXICON NMasc_es_$eSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Dat+Sg:^e #;
++Masc+NN+Gen+Sg:^es #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:+um^e #;
++Masc+NN+Acc+Plural:+um^e #;
++Masc+NN+Dat+Plural:+um^en #;
++Masc+NN+Gen+Plural:+um^e #;
+
+LEXICON NMasc_es_$er
+Rand     NMasc_es_$erSPinf;
+
+LEXICON NMasc_es_$erSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Dat+Sg:^e #;
++Masc+NN+Gen+Sg:^es #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:+um^er #;
++Masc+NN+Acc+Plural:+um^er #;
++Masc+NN+Dat+Plural:+um^ern #;
++Masc+NN+Gen+Plural:+um^er #;
+
+
+LEXICON NMasc_es_e
+Rapport    NMasc_es_eSPinf;
+
+LEXICON NMasc_es_eSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Dat+Sg:^e #;
++Masc+NN+Gen+Sg:^es #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^e #;
++Masc+NN+Acc+Plural:^e #;
++Masc+NN+Dat+Plural:^en #;
++Masc+NN+Gen+Plural:^e #;
+
+LEXICON NMasc_es_en
+Schmerz    NMasc_es_enSPinf;
+
+LEXICON  NMasc_es_enSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Dat+Sg:^e #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^en #;
++Masc+NN+Acc+Plural:^en #;
++Masc+NN+Dat+Plural:^en #;
++Masc+NN+Gen+Plural:^en #;
+
+LEXICON NMasc_n_n
+Schimpanse    NMasc_n_nSPinf;
+
+LEXICON NMasc_n_nSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:^n #;
++Masc+NN+Dat+Sg:^n #;
++Masc+NN+Gen+Sg:^n #;
++Masc+NN+Nom+Plural:^n #;
++Masc+NN+Acc+Plural:^n #;
++Masc+NN+Dat+Plural:^n #;
++Masc+NN+Gen+Plural:^n #;
+
+LEXICON NMasc_s_$
+Vater    NMasc_s_$SPinf;
+Schwager    NMasc_s_$SPinf;
+
+LEXICON NMasc_s_$SPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:+um^ #;
++Masc+NN+Acc+Plural:+um^ #;
++Masc+NN+Dat+Plural:+um^n #;
++Masc+NN+Gen+Plural:+um^ #;
+
+LEXICON NMasc_s_$x
+Wagen    NMasc_s_$xSPinf;
+
+LEXICON NMasc_s_$xSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:+um^ #;
++Masc+NN+Acc+Plural:+um^ #;
++Masc+NN+Dat+Plural:+um^ #;
++Masc+NN+Gen+Plural:+um^ #;
+
+
+LEXICON NMasc_s_0
+Walliser    NMasc_s_0SPinf;
+
+LEXICON NMasc_s_0SPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^0 #;
++Masc+NN+Acc+Plural:^0 #;
++Masc+NN+Dat+Plural:^n #;
++Masc+NN+Gen+Plural:^0 #;
+
+
+LEXICON NMasc_s_e
+NMasc_s_eSPinf;
+
+LEXICON NMasc_s_eSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^e #;
++Masc+NN+Acc+Plural:^e #;
++Masc+NN+Dat+Plural:^en #;
++Masc+NN+Gen+Plural:^e #;
+
+LEXICON NMasc_s_en
+Zensor    NMasc_s_enSPinf;
+
+LEXICON NMasc_s_enSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^en #;
++Masc+NN+Acc+Plural:^en #;
++Masc+NN+Dat+Plural:^en #;
++Masc+NN+Gen+Plural:^en #;
+
+LEXICON NMasc_s_n
+Muskel    NMasc_s_nSPinf;
+
+LEXICON NMasc_s_nSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^n #;
++Masc+NN+Acc+Plural:^n #;
++Masc+NN+Dat+Plural:^n #;
++Masc+NN+Gen+Plural:^n #;
+
+LEXICON NMasc_s_s
+Neonazi    NMasc_s_sSPinf;
+
+LEXICON NMasc_s_sSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:^s #;
++Masc+NN+Acc+Plural:^s #;
++Masc+NN+Dat+Plural:^s #;
++Masc+NN+Gen+Plural:^s #;
+
+LEXICON NMasc_s_x
+Regen NMasc_s_xSPinf;
+
+LEXICON NMasc_s_xSPinf
++Masc+NN+Nom+Sg:0 #;
++Masc+NN+Acc+Sg:0 #;
++Masc+NN+Dat+Sg:0 #;
++Masc+NN+Gen+Sg:^s #;
++Masc+NN+Nom+Plural:0 #;
++Masc+NN+Acc+Plural:0 #;
++Masc+NN+Dat+Plural:0 #;
++Masc+NN+Gen+Plural:0 #;
+
+LEXICON NNeut-0/ien
+Adverb    NNeut-0/ienSPinf;
+
+LEXICON NNeut-0/ienSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^ien #;
++Neut+NN+Acc+Plural:^ien #;
++Neut+NN+Dat+Plural:^ien #;
++Neut+NN+Gen+Plural:^ien #;
+
+
+
+LEXICON NNeut-a/ata
+Sperma    NNeut-a/ataSPinf;
+
+LEXICON NNeut-a/ataSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:-a^ata #;
++Neut+NN+Acc+Plural:-a^ata #;
++Neut+NN+Dat+Plural:-a^ata #;
++Neut+NN+Gen+Plural:-a^ata #;
+
+LEXICON NNeut-a/en
+Stigma    NNeut-a/enSPinf;
+
+LEXICON NNeut-a/enSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:-a^en #;
++Neut+NN+Acc+Plural:-a^en #;
++Neut+NN+Dat+Plural:-a^en #;
++Neut+NN+Gen+Plural:-a^en #;
+
+
+
+LEXICON NNeut-on/a
+Lexikon NNeut-on/aSPinf;
+
+LEXICON NNeut-on/aSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:-on^a #;
++Neut+NN+Acc+Plural:-on^a #;
++Neut+NN+Dat+Plural:-on^a #;
++Neut+NN+Gen+Plural:-on^a #;
+
+LEXICON NNeut-s/$sser
+fass    NNeut-s/$sserSPinf;
+
+LEXICON NNeut-s/$sserSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Nom+Plural:-s+um^sser #;
++Neut+NN+Acc+Plural:-s+um^sser #;
++Neut+NN+Dat+Plural:-s+um^sser #;
++Neut+NN+Gen+Plural:-s+um^sser #;
+
+LEXICON NNeut-um/a
+Fatum NNeut-um/aSPinf;
+
+LEXICON NNeut-um/aSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:-um^a #;
++Neut+NN+Acc+Plural:-um^a #;
++Neut+NN+Dat+Plural:-um^a #;
++Neut+NN+Gen+Plural:-um^a #;
+
+LEXICON NNeut-um/en
+Forum    NNeut-um/enSPinf;
+
+LEXICON NNeut-um/enSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:-um^en #;
++Neut+NN+Acc+Plural:-um^en #;
++Neut+NN+Dat+Plural:-um^en #;
++Neut+NN+Gen+Plural:-um^en #;
+
+
+LEXICON NNeut/Pl
+Kapitalien    NNeut/PlSPinf;
+
+LEXICON NNeut/PlSPinf
++Neut+NN+Nom+Plural:0 #;
++Neut+NN+Acc+Plural:0 #;
++Neut+NN+Dat+Plural:0 #;
++Neut+NN+Gen+Plural:0 #;
+
+
+LEXICON NNeut/Sg_es
+Malz    NNeut/Sg_esSPinf;
+
+LEXICON NNeut/Sg_esSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:^e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^es #;
+
+LEXICON NNeut/Sg_s
+Misstrauen NNeut/Sg_sSPinf;
+
+LEXICON NNeut/Sg_sSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
+
+LEXICON NNeut_0_x
+Newton    NNeut_0_xSPinf;
+
+LEXICON NNeut_0_xSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:0 #;
++Neut+NN+Acc+Plural:0 #;
++Neut+NN+Dat+Plural:0 #;
++Neut+NN+Gen+Plural:0 #;
+
+LEXICON NNeut_es_$e
+Giftzahn NNeut_es_$eSPinf;
+
+LEXICON NNeut_es_$eSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:+um^e #;
++Neut+NN+Acc+Plural:+um^e #;
++Neut+NN+Dat+Plural:+um^en #;
++Neut+NN+Gen+Plural:+um^e #;
+
+LEXICON NNeut_es_$er
+Grab    NNeut_es_$erSPinf;
+
+LEXICON NNeut_es_$erSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:+um^er #;
++Neut+NN+Acc+Plural:+um^er #;
++Neut+NN+Dat+Plural:+um^ern #;
++Neut+NN+Gen+Plural:+um^er #;
+
+LEXICON NNeut_es_e
+Grundstück    NNeut_es_eSPinf;
+
+LEXICON NNeut_es_eSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^e #;
++Neut+NN+Acc+Plural:^e #;
++Neut+NN+Dat+Plural:^en #;
++Neut+NN+Gen+Plural:^e #;
+
+LEXICON NNeut_es_en
+Insekt    NNeut_es_enSPinf;
+
+LEXICON NNeut_es_enSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^en #;
++Neut+NN+Acc+Plural:^en #;
++Neut+NN+Dat+Plural:^en #;
++Neut+NN+Gen+Plural:^en #;
+
+LEXICON NNeut_es_er
+Kind    NNeut_es_erSPinf;
+
+LEXICON NNeut_es_erSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Dat+Sg:e #;
++Neut+NN+Gen+Sg:^es #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^er #;
++Neut+NN+Acc+Plural:^er #;
++Neut+NN+Dat+Plural:^ern #;
++Neut+NN+Gen+Plural:^er #;
+
+LEXICON NNeut_s_$
+Kloster NNeut_s_$SPinf;
+
+LEXICON NNeut_s_$SPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:+um^ #;
++Neut+NN+Acc+Plural:+um^ #;
++Neut+NN+Dat+Plural:+um^n #;
++Neut+NN+Gen+Plural:+um^ #;
+
+LEXICON NNeut_s_0
+Knödel    NNeut_s_0SPinf;
+
+LEXICON NNeut_s_0SPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:0 #;
++Neut+NN+Acc+Plural:0 #;
++Neut+NN+Dat+Plural:^n #;
++Neut+NN+Gen+Plural:0 #;
+
+LEXICON NNeut_s_e
+Kollektiv    NNeut_s_eSPinf;
+
+LEXICON NNeut_s_eSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^e #;
++Neut+NN+Acc+Plural:^e #;
++Neut+NN+Dat+Plural:^en #;
++Neut+NN+Gen+Plural:^e #;
+
+LEXICON NNeut_s_en
+Melodram    NNeut_s_enSPinf;
+
+LEXICON NNeut_s_enSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^en #;
++Neut+NN+Acc+Plural:^en #;
++Neut+NN+Dat+Plural:^en #;
++Neut+NN+Gen+Plural:^en #;
+
+
+LEXICON NNeut_s_n
+Wochenende    NNeut_s_nSPinf;
+
+LEXICON NNeut_s_nSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^n #;
++Neut+NN+Acc+Plural:^n #;
++Neut+NN+Dat+Plural:^n #;
++Neut+NN+Gen+Plural:^n #;
+
+
+LEXICON NNeut_s_s
+Wrack    NNeut_s_sSPinf;
+
+LEXICON NNeut_s_sSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:^s #;
++Neut+NN+Acc+Plural:^s #;
++Neut+NN+Dat+Plural:^s #;
++Neut+NN+Gen+Plural:^s #;
+
+LEXICON NNeut_s_x
+Zeichen    NNeut_s_xSPinf;
+
+LEXICON NNeut_s_xSPinf
++Neut+NN+Nom+Sg:0 #;
++Neut+NN+Acc+Sg:0 #;
++Neut+NN+Dat+Sg:0 #;
++Neut+NN+Gen+Sg:^s #;
++Neut+NN+Nom+Plural:0 #;
++Neut+NN+Acc+Plural:0 #;
++Neut+NN+Dat+Plural:0 #;
++Neut+NN+Gen+Plural:0 #;
+
+
+
+
+
+
+
+
+
+
+
+

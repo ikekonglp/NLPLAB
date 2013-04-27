@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  26 APR 2013 03:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  27 APR 2013 03:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,79 +414,92 @@ LaTeX Font Info:    Try loading font information for U+wasy on input line 58.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--71
+Underfull \hbox (badness 10000) in paragraph at lines 67--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 [1
 
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 80.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 98--109
+Underfull \hbox (badness 10000) in paragraph at lines 97--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--109
+Underfull \hbox (badness 10000) in paragraph at lines 97--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--123
+Underfull \hbox (badness 10000) in paragraph at lines 114--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--123
+Underfull \hbox (badness 10000) in paragraph at lines 114--122
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 129--137
+Underfull \hbox (badness 10000) in paragraph at lines 128--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 142--144
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 183--207
+[4] [5]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
 
  []
 
-(./report-template.bbl [5]) [6] (./report-template.aux) ) 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7]
+Overfull \hbox (4.20445pt too wide) in paragraph at lines 257--258
+[]\OT1/cmr/m/n/10.95 Implementing mo-re so-phi-sti-ca-ted ru-les for the com-po
+un-ding words, a re-a-so-na-b-ly well-preformed
+ []
+
+[8] (./report-template.bbl) [9] (./report-template.aux) ) 
 Here is how much of TeX's memory you used:
- 4988 strings out of 493633
- 71581 string characters out of 3143378
- 145426 words of memory out of 3000000
- 8154 multiletter control sequences out of 15000+200000
- 16114 words of font info for 66 fonts, out of 3000000 for 9000
+ 4994 strings out of 493633
+ 71677 string characters out of 3143378
+ 145425 words of memory out of 3000000
+ 8159 multiletter control sequences out of 15000+200000
+ 16282 words of font info for 67 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 38i,11n,43p,1046b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,11n,43p,1046b,328s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/20
 11/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/201
 1/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2011
@@ -498,11 +511,12 @@ ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2011/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2011/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2011/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report-template.pdf (6 pages, 156747 bytes).
+type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt10.pfb>
+Output written on report-template.pdf (9 pages, 180267 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

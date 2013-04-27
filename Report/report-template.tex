@@ -57,12 +57,11 @@
 \begin{document}
 \maketitle
 \renewcommand{\abstractname}{Abstract}
-
+\renewcommand{\tablename}{Table}
 \begin{abstract}
 This is an incomplete draft of the development report for YAGMA (Yet Another German Morphological Analyser). The main content of this report includes basic information about German, past work on morphology of German, a survey of German morphology, design plans and experiment results for YAGMA.
 \end{abstract}
 
-\nascomment{brief introduction}
 
 \section{Basic Information about German}
 German (Deutsch) is spoken as a first language by approximately 100 million people in the Federal Republic of Germany, the German Democratic Republic, Austria, Switzerland, and elsewhere, and as a second language by many others in Central and Eastern Europe. \citep{fox}\\\\
@@ -144,42 +143,54 @@ Despite the common affix things, German has some phenomena which worth more atte
 Other phenomena also do appear in German, like Suppletion, Ablaut, Chipping and Reduplication. We will not go through each of them here.
 
 \section{Initial Design}
+We design the morphological analyser strictly follows the traditional FST design path. The big picture is like this: We first keep all the lexicon we care about in the lexicon file. Then, we represent every morphological phenomena as a special ``suffix'' to the lexicon (we will talk about this in details in later sections). After that, we use rules to process those special ``suffix'' and do some FOMA tricks to make the insertion, deletion, umlaut thing really happen in the string. Finally, we will delete all the intermediate symbols we inserted in the representation and make it the final surface string.
 
 \subsection{Empirical Word Cluster}
-Rather than focusing on the morphological rules and way too many exceptions in German, our approach, like the in \cite{sch04} 
+Rather than focusing on the morphological rules and way too many exceptions in German, our approach, like the in \cite{sch04}, is to put words into empirical word clusters based on what we should do to them to transform them into other morphological forms. For example, we have a class ``NFem\_0\_n'' which stands for Fem Nouns which remain the same (0) in the single 4 different forms (Nom, Acc, Dat, Gen) and have a suffix ``n'' in the plural 4 different forms. By doing this, we avoid most difficulties in hand coding rules. We manually check more than 50 classes for nouns using the German morphology dictionary. The lexicons come from Morphisto, current number of nouns we covered in the lexicon file is around 10,000.
 \subsection{Suffix Phenomena Solution}
-
+The suffix thing is really easy to handle. Like for English, our approach is to map the tags (e.g. +Fem, +NN etc.) directly to the morphology boundary and the suffix. The rule in FOMA is like the following:
+\begin{verbatim}
++Fem+NN+Nom+Plural:^s #
+\end{verbatim}
+where we map the +FEM+NN+Nom+Plural tags to ``s''. You can guess this is a rule for the word class who uses the ``s'' as the Plural suffix.
 \subsection{Deletion Phenomena Solution}
 For the deletion problem, unlike in English (e-deletion), we do not have a clear rule to do the deletion and the characters deleted are different from each other and often more than one character. Therefore, we use the different deletion rules to solve the problem, for example, if we want to delete the \textit{a} in the end of the word, we implement an ``Adel'' (A-Deletion rule) to deal with that. Basically, if we first add a ``-a'' string before the morphological boundary (in the lexicon file), and then we use the rule to delete all the ``a-a'' before the morphological boundary (in the rule file).
 \begin{verbatim}
 define Delus {us} -> 0 || ?* _ "-us" "+um"* "^" ?* ;
 \end{verbatim}
-
+While German has many kinds of deletions (-us, -um, -a etc.), the simply e-deletion rule in English does not work so well again. By applying this approach, we actually allowing different deletion rules based on the multi-character symbol (``-us'' ``-a''), and more importantly, this avoid the conflicts with the umlaut rules -- while it is impossible for a single word has two deletion rules at the same time, the umlaut and the deletion can actually happen in the same stage. Here, by putting the deletions rule symbols before the umlaut symbols, we managed them together.
 \subsection{Prefix Phenomena Solution}
-The prefix phenomena is solved using a trick FOMA regular expression which stands for a insertion before the longest possible match.
+The prefix phenomena is solved using a trick FOMA regular expression which stands for a insertion before the longest possible match. When we want to insert the ``ge'' at the beginning of the word (and ``t'' in the end, which is simple), we first put a special symbol ``+ge'' just after the morphology boundary. So in the second stage, when we see that, we use the following rules to insert it at the beginning of the string.
 \begin{verbatim}
 define Addpref   .?* "^" "+ge" ?*. @-> {ge} ...;
 \end{verbatim}
-
+where the ``$@->$'' stands for the left to right longest match in FOMA, and ``...'' represent the original string waiting for insertion.\footnote{The rule is firstly not like this, we will talk about it in Lessons Learned and Revised Design.}
 \subsection{Umlaut Phenomena Solution}
-
+The umlaut phenomena are regarded as the most difficult ones in German. But it can also be solved with the approach we described above (although not perfectly). The rules for umlaut is like the following:
 \begin{verbatim}
 define Plusum1 a -> "+uma" || C* _ RC*  RuleSymbolPM* "+um" "^" ?* ;
 \end{verbatim}
-First map the character into intermediate symbols like the ``+uma'', and then map it into the umlaut characters at last like ``"a''. By performing the trick, we avoiding the errors which happens if there are two different vowels in the same word.\\
+Where we first map the character into intermediate symbols like the ``+uma'', and then map it into the umlaut characters like ``"a''. By performing the trick, we avoiding the errors which happens if there are two different vowels in the same word.\\
 Also, an open question is that, when there are two vowels in the same word, it is not clear for which one we should do the umlaut thing (It is neither always the first vowel nor the last vowel). Since we found that the vowel u seems to be more preferable in umlaut, we insert a tricky rule which replace the u first than a or o.
 
 
 \section{System Analysis on Corpus A}
-
+The system analysis is performed use the gold morphology labels from the Tiger Corpus. We first extract 2000 nouns (and 2000 verbs) from the corpus with gold morphology label (1000 for corpus A and 1000 for corpus B), and then use them as input for our morphology analyser. Since in the Tiger corpus, words have their context, while for our morphology analyser, the decision is independent of context, we say we predict the word right if anyone of our predictions match the gold morphology label. The following table shows the coverage and the accuracy for corpus A for both nouns and verbs. (Regarding to verbs, we only consider the regular verbs and the ``inf'' or ``past-participial'' forms, so the accuracy is perfect but the coverage is actually quite limited.)
+\begin{table}[h]
+\begin{center}
 \begin{tabular}{|c|ccc|}
 \hline 
  & Predicted & Corrected & Accuracy \\ 
 \hline 
 Corpus A & 573 & 560 & 0.978 \\ 
 \hline 
-\end{tabular} 
-\\
+\end{tabular}
+\end{center}
+\caption{Nouns in Corpus A}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
 \begin{tabular}{|c|ccc|}
 \hline 
  & Predicted & Corrected & Accuracy \\ 
@@ -187,10 +198,20 @@ Corpus A & 573 & 560 & 0.978 \\
 Corpus A & 195 & 195 & 1.00 \\ 
 \hline 
 \end{tabular} 
-
+\end{center}
+\caption{Verbs in Corpus A}
+\end{table}
 \section{Lessons Learned and Revised Design}
-
+The first thing we found in Corpus A version of the analyser is actually a bug. We firstly write the umlaut rule as the following:
+\begin{verbatim}
+define Addpref   .?* "^" "+ge" ?*. @-> ge ...;
+\end{verbatim}
+which perform well in most cases, but when the noun contains ``ge'' itself, it just can't recognise it. (The FST view, and the words looks all right, it just mysteriously goes wrong, I am wondering if it is a bug of FOMA.) But by adding the \{\} around the ``ge'', this bug fixed.\\\\
+The other issue we learnt from the performance of corpus A is that the coverage is not good mainly due to the compounding words in German. So we add some rules to deal with the compounding words. We covered two types of the compounding rules, the first type has a hyphen inside the words, where we just simply ignore the first part of the word and regard all the morphological transformations happen in the second part of the words. The second type we consider is a base word followed by another base word, like the NN compounding words we mentioned in the previous section. The solution for this is also similar to the first type, where we add all the possible lexicons before the original grammar we have, so that we know the morphological transformations also happen in the second part of the word, which is consistent with the phenomena we observed in German.
 \section{System Analysis on Corpus B}
+By applying the methods mentioned in the previous section, we can see a substantial improvement in the coverage, where we cover 10\% more words than before and do not really drop a lot in accuracy. 
+\begin{table}[h]
+\begin{center}
 \begin{tabular}{|c|ccc|}
 \hline 
  & Predicted & Corrected & Accuracy \\ 
@@ -198,7 +219,12 @@ Corpus A & 195 & 195 & 1.00 \\
 Corpus B & 650 & 615 & 0.946 \\ 
 \hline 
 \end{tabular} 
-\\
+\end{center}
+\caption{Nouns in Corpus B}
+\end{table}
+
+\begin{table}[h]
+\begin{center}
 \begin{tabular}{|c|ccc|}
 \hline 
  & Predicted & Corrected & Accuracy \\ 
@@ -206,7 +232,12 @@ Corpus B & 650 & 615 & 0.946 \\
 Corpus B & 142 & 142 & 1.00 \\ 
 \hline 
 \end{tabular} 
-\\
+\end{center}
+\caption{Verbs in Corpus B}
+\end{table}
+Here we also shows the revised solution for the original corpus A for reference.
+\begin{table}[h]
+\begin{center}
 \begin{tabular}{|c|ccc|}
 \hline 
  & Predicted & Corrected & Accuracy \\ 
@@ -214,16 +245,20 @@ Corpus B & 142 & 142 & 1.00 \\
 Corpus A & 657 & 631 & 0.960 \\ 
 \hline 
 \end{tabular} 
-\\
+\end{center}
+\caption{Nouns in Corpus A}
+\end{table}
 
-
-
-\section{Final Revisions}
 
 \section{Future Work}
+Since German has very rich morphological phenomena, we still have a very long way to go before it is a reasonable German morphology analyser. The most important thing is:
+\begin{itemize}
+\item Continuing hacking on the word clusters and getting these done for verbs and adjectives also.
+\item Implementing more sophisticated rules for the compounding words, a reasonably well-preformed guesser should be needed in this step.
+\item Revising the rules for umlaut, to deal with the umlaut phenomena where there are multiple vowels in the same word.
+\end{itemize}
 
-
-
+\newpage
 
 \renewcommand\refname{References}
 \bibliographystyle{plainnat}

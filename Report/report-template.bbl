@@ -1,57 +1,48 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[European Commission(2004)]{ec}
-European Commission,
-\newblock \emph{Many tongues, one family. Languages in the European Union.}
-\newblock 2004
+\bibitem[Boase-Beier and Lodge(2008)]{glli}
+Jean Boase-Beier and Ken~R Lodge.
+\newblock \emph{The German language: A linguistic introduction}.
+\newblock Wiley-Blackwell, 2008.
+
+\bibitem[Commission(2004)]{ec}
+European Commission.
+\newblock {Many tongues, one family. Languages in the European Union.}, 2004.
 
 \bibitem[Fox(1990)]{fox}
-Anthony Fox,
-\newblock \emph{The Structure of German},
-\newblock Oxford University Press,
-\newblock 1990
-
-\bibitem[Buck(1999)]{cgg}
-Timothy Buck,
-\newblock \emph{A Concise German Grammar},
-\newblock Oxford University Press,
-\newblock 1999
-
-\bibitem[Boase-Beier(2003)]{glli}
-Jean Boase-Beier, Ken Lodge,
-\newblock \emph{The German Language - A Linguistic Introduction},
-\newblock Blackwell Publishing,
-\newblock 2003
-
-\bibitem[Cai(1999)]{ndg}
-Yousheng Cai, Xiesong Jiang
-\newblock \emph{Neue Deutsche Grammatik},
-\newblock Shanghai Foreign Language Education Press,
-\newblock 1999
-
-\bibitem[Lezius(1998)]{lez98}
-Wolfgang Lezius, Reinhard Rapp, Manfred Wettler,
-\newblock \emph{A Freely Available Morphological Analyzer, Disambiguator, and Context Sensitive Lemmatizer for German},
-\newblock in Proceedings of the COLING-ACL 1998 pp. 743-747
+Anthony Fox.
+\newblock \emph{The structure of German}.
+\newblock Oxford University Press, USA, 1990.
 
 \bibitem[Lezius(1996)]{lez96}
-Wolfgang Lezius
-\newblock \emph{Morphologiesystem Morphy},
-\newblock in R. Hausser, editor, Linguistische Verifikation, Dokumentation zur ersten Morpholympics 1994 pp. 25-35, Niemeyer, 1996
-
-\bibitem[Schmid(2004)]{sch04}
-Schmid, H., Fitschen, A., Heid, U.
-\newblock \emph{SMOR: A German computational morphologycovering derivation, composition and inflection},
-\newblock In: Proceedings of the 4th Inter-national Conference on Language Resources and Evaluation, Volume 4., Lisbon, Portugal (2004) 1263 - 1266
+Wolfgang Lezius.
+\newblock Morphologiesystem morphy.
+\newblock In \emph{Linguistische Verifikation, Dokumentation zur ersten
+  Morpholympics 94}, pages 25--35, 1996.
 
 \bibitem[Lezius(2000)]{lez00}
-Wolfgang Lezius
-\newblock \emph{Morphy - German Morphology, Part-of-Speech Tagging and Applications},
-\newblock in Ulrich Heid; Stefan Evert; Egbert Lehmann and Christian Rohrer, editors, Proceedings of the 9th EURALEX International Congress pp. 619-623 Stuttgart, Germany
+Wolfgang Lezius.
+\newblock Morphy-german morphology, part-of-speech tagging and applications.
+\newblock In \emph{Proceedings of the 9th EURALEX International Congress},
+  pages 619--623, 2000.
+
+\bibitem[Lezius et~al.(1998)Lezius, Rapp, and Wettler]{lez98}
+Wolfgang Lezius, Reinhard Rapp, and Manfred Wettler.
+\newblock A freely available morphological analyzer, disambiguator and context
+  sensitive lemmatizer for german.
+\newblock In \emph{Proceedings of the 17th international conference on
+  Computational linguistics-Volume 2}, pages 743--748. Association for
+  Computational Linguistics, 1998.
+
+\bibitem[Schmid et~al.(2004)Schmid, Fitschen, and Heid]{sch04}
+Helmut Schmid, Arne Fitschen, and Ulrich Heid.
+\newblock Smor: A german computational morphology covering derivation,
+  composition and inflection.
+\newblock In \emph{Proceedings of LREC 2004}, pages 1263--1266. Citeseer, 2004.
 
 \end{thebibliography}
